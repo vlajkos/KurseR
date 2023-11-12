@@ -67,3 +67,35 @@
 .login a:hover {
     color: red;
 }
+
+/* FOOTER */
+
+.footer {
+  padding: 1rem 0;
+  font-family: 'Oswald', sans-serif;
+  background-color: beige;
+ 
+}
+.footer ul {
+ display: flex;
+ justify-content: space-between;
+ margin: auto;
+ width: 40rem;
+ list-style: none;
+
+
+}
+.footer li {
+  display: flex;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+}
+.footer p {
+  margin-top: 2rem;
+  text-align: center;
+}
+.icons-x {
+  transform: scale(1.5, 1.5);
+}
