@@ -11,7 +11,7 @@
                     <li><a href="index.php">Kursevi</a></li>
                     <li><a href="lyrics.php">Predavači</a></li>
                     <li><a href="lyrics.php">Akcije</a></li>
-                    <li><a href="lyrics.php">O nama</a></li>
+                    <li><a href="about.php">O nama</a></li>
                     <?php
                     if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] == 1):
                         ?>

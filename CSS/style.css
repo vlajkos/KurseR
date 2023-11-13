@@ -24,14 +24,16 @@
   }
   html { font-size: 10px; }
 
-
+body {
+  background-color: beige;
+}
 /* Header */
 
 
 .nav {
     display: flex;
     font-family: 'Oswald', sans-serif;
-    background-color: beige;
+    background-color: rgb(238, 238, 194);
     align-items: center;
     justify-content: space-between;
 }
@@ -71,12 +73,12 @@
 /* FOOTER */
 
 .footer {
-  padding: 1rem 0;
   font-family: 'Oswald', sans-serif;
-  background-color: beige;
+  background-color: rgb(238, 238, 194);
  
 }
 .footer ul {
+ padding: 1rem;
  display: flex;
  justify-content: space-between;
  margin: auto;
@@ -92,10 +94,40 @@
   height: 32px;
   overflow: hidden;
 }
+.footer-copyright {
+  padding: .4rem;
+}
 .footer p {
-  margin-top: 2rem;
   text-align: center;
 }
 .icons-x {
   transform: scale(1.5, 1.5);
+}
+
+
+
+/* About Us */
+.about-us-container {
+  padding: 8rem;
+  font-family: 'Oswald', sans-serif;
+  
+}
+
+.about-us-container h1 {
+  font-size:  2.4rem;
+
+}
+
+.about-us-container h2 {
+  font-size:  2rem;
+  
+}
+
+.about-us-sub {
+  margin-top: 1.5rem;
+
+}
+
+.about-us-container p {
+  font-size: 1.6rem;
 }

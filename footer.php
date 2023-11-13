@@ -15,5 +15,8 @@
                     <img src="./Images/x-icon.png" alt="" class="icons-x"> </a>
         </ul>
     </nav>
-    <p>&copy; 2023 Anđela</p>
+    <div class="footer-copyright">
+    <p>&copy; 2023 Jana</p>
+    </div>
+    
 </footer>
