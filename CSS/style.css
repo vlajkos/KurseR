@@ -5,10 +5,6 @@
   * {
     margin: 0;
   }
-  body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
   img, picture, video, canvas, svg {
     display: block;
     max-width: 100%;
@@ -25,13 +21,21 @@
   html { font-size: 10px; }
 
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  position:relative;
   background-color: beige;
+  font-family: 'Oswald', sans-serif;
 }
 /* Header */
 
 
 .nav {
     display: flex;
+    position: relative;
     font-family: 'Oswald', sans-serif;
     background-color: rgb(238, 238, 194);
     align-items: center;
@@ -57,22 +61,162 @@ body {
     color: red;
 }
 
+
+ /* Login Or Register links */
+ .login-links-container {
+  color: black;
+  position:absolute;
+  right: 5rem;
+  top: 1.4rem;
+ }
+ .login-links-container a {
+  color: white;
+  text-decoration: none;
+ }
+ .login-links-container div {
+  height: .5rem; 
+  width: .5rem;
+ }
+ .login-links-container form {
+  margin-top: 1rem;
+  text-align: center;
+ }
+ .login-links-container input {
+  background-color: white;
+  border:none;
+  padding:8px 16px;
+  border-radius: 14px;
+  font-weight: bold;
+  cursor: pointer
+ }
+ .login-links-container input:hover {
+  color:red;
+  background-color: beige; /* New background color on hover */
+}
 /* Login Header */
 .login {
-    font-size: 2rem;
-    margin-right: 3rem;
+  font-size: 2rem;
+  margin-right: 3rem;
 }
 .login a {
-    margin-right:2rem;
-    color: black;
+  margin-right:2rem;
+  color: black;
 }
 .login a:hover {
-    color: red;
+  color: red;
+}
+/* Register Form */
+
+.register-container {
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  max-width: 40rem;
+  padding: 20px;
+  margin: 4rem auto;
+  font-size: 1.4rem;
+}
+.register-container h2 {
+  margin-bottom: 2rem;
+}
+.register-form {
+  text-align: center;
+}
+
+.register-input-container {
+  margin-bottom: 15px;
+}
+#register-input-container-birthday {
+  position: relative;
+}
+#register-input-container-birthday p {
+  color:gray;
+  position:absolute;
+  left: 12rem;
+  top:50%;
+  transform:translateY(-50%);
+}
+.register-input-field {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#name_error,
+#surname_error,
+#username_error,
+#password_error,
+#phone_error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.register-btn {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.register-btn:hover {
+  background-color: #45a049;
+}
+
+/* LOGIN FORM */
+.login-container {
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  max-width: 40rem;
+  padding: 20px;
+  margin: 4rem auto;
+  font-size: 1.4rem;
+}
+.login-container h2 {
+  margin-bottom: 2rem;
+}
+.login-form {
+  text-align: center;
+}
+
+.login-input-container {
+  margin-bottom: 15px;
+}
+
+.login-input-field {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+.login h2 {
+  font-size: 2rem;
 }
 
 /* FOOTER */
 
 .footer {
+  margin-top: auto;
   font-family: 'Oswald', sans-serif;
   background-color: rgb(238, 238, 194);
  
@@ -90,8 +234,8 @@ body {
 .footer li {
   display: flex;
   align-items: center;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   overflow: hidden;
 }
 .footer-copyright {
@@ -131,3 +275,6 @@ body {
 .about-us-container p {
   font-size: 1.6rem;
 }
+
+
+
