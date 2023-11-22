@@ -33,15 +33,14 @@
             echo '<div></div>';
             echo '<a href="register.php">Register</a> </div>';
         } elseif (isset($_SESSION['id'])) {
-            // Condition 2: Logged out (not on login.php or register.php)
+            // Condition (not on login.php or register.php)
             echo "<p>" . ucfirst($_SESSION['name']) . ' ' .
                 ucfirst($_SESSION['surname']) . "</p>";
             ?>
             <form action="handler/logout.php" method="POST"> <input type="submit" name="logout" value="Logout"></form>
             <?php
         } else {
-            // Condition 3: Logged in
-            // Display something else or perform other actions
+           
         }
         ?>
 

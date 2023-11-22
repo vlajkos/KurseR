@@ -1,6 +1,8 @@
 <?php 
 session_start();
-include 'common.php'
+include 'common.php';
+
+
 ?>
 
 

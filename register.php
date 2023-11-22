@@ -1,15 +1,15 @@
 <?php
+session_start();
 require "handler/dbBroker.php";
 require "model/user.php";
 $conn = Database::connectDatabase();
-session_start();
+
 
 if (isset($_SESSION['id'])) {
     header("Location: index.php");
 }
-var_dump($_SESSION);
-var_dump($_POST);
-if (isset($_POST["name"]) && isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["surname"]) && isset($_POST["date"]) && isset($_POST["email"]) && isset($_POST["phone"])) {
+
+if (isset($_POST["name"]) && isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["surname"]) && isset($_POST["birthday"]) && isset($_POST["email"]) && isset($_POST["phone"])) {
 
     $name = $_POST["name"];
     $username = $_POST["username"];
@@ -21,7 +21,6 @@ if (isset($_POST["name"]) && isset($_POST["username"]) && isset($_POST["password
     $phone = $_POST["phone"];
     $user = new User(1, $name, $surname, $username, $password,  $email, $birthday, $phone);
 
-    
     if ($user->checkRegistration($name, $surname, $username, $email, $phone, $password) && $user->checkUsername($conn)) {
         $user->registerUser($conn);
         $result = $user->logIn($conn);
@@ -36,8 +35,8 @@ if (isset($_POST["name"]) && isset($_POST["username"]) && isset($_POST["password
             $_SESSION["is_admin"] = $data["is_admin"];
             header("Location: index.php");
         }
-    } else
-        header("Location: register.php");
+    } else {}
+       
 
 
 
@@ -45,12 +44,6 @@ if (isset($_POST["name"]) && isset($_POST["username"]) && isset($_POST["password
 
 
 }
-
-
-
-
-
-
 
 
 ?>
@@ -78,17 +71,17 @@ if (isset($_POST["name"]) && isset($_POST["username"]) && isset($_POST["password
 
         <div id="name_error"></div>
         <div class="register-input-container">        
-            <input class="register-input-field" type="text" placeholder="Vaše ime" name="name" id="name">
+            <input class="register-input-field" type="text" placeholder="Vaše ime" name="name" id="name" value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : ''; ?>">
         </div>
 
         <div id="surname_error"></div>
         <div class="register-input-container"> 
-            <input class="register-input-field" type="text" placeholder="Vaše prezime" name="surname" id="surname">
+            <input class="register-input-field" type="text" placeholder="Vaše prezime" name="surname" id="surname" value="<?php echo isset($_POST['surname']) ? htmlspecialchars($_POST['surname']) : ''; ?>">
         </div>
 
         <div id="username_error"></div>
         <div class="register-input-container">
-            <input class="register-input-field" type="text" placeholder="Vaše Korisničko Ime" name="username" id="username">
+            <input class="register-input-field" type="text" placeholder="Vaše Korisničko Ime" name="username" id="username" value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>">
         </div>
 
         <div id="password_error"></div>
@@ -97,30 +90,37 @@ if (isset($_POST["name"]) && isset($_POST["username"]) && isset($_POST["password
         </div>
         <div id="email_error"></div>
         <div class="register-input-container"> 
-            <input class="register-input-field" type="email" placeholder="Vaš Imejl" name="email" id="email">
+            <input class="register-input-field" type="email" placeholder="Vaš Imejl" name="email" id="email" value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
         </div>
 
         <div id="birthday_error"></div>
         <div class="register-input-container" id="register-input-container-birthday">
             <p>Vaš Datum Rođenja</p>
-            <input class="register-input-field" type="date" name="birthday" id="birthday">
+            <input class="register-input-field" type="date" name="birthday" id="birthday" value="<?php echo isset($_POST['birthday']) ? htmlspecialchars($_POST['birthday']) : ''; ?>">
         </div>
 
         <div id="phone_error"></div>
         <div class="register-input-container">
-            <input class="register-input-field" type="text" placeholder="Vaš Broj Telefona" name="phone" id="phone">
+            <input class="register-input-field" type="text" placeholder="Vaš Broj Telefona" name="phone" id="phone" value="<?php echo isset($_POST['phone']) ? htmlspecialchars($_POST['phone']) : ''; ?>">
         </div>
-
+        
+        <?php 
+        if (isset($_SESSION['registration-error'])):
+        ?>
         <div id="error">
-            <?php 
-            if (isset($_SESSION['registration-error'])) {
+            <?php
             echo $_SESSION['registration-error'];
-            unset($_SESSION['registration-error']);
-            }
             ?>
         </div>
+        <?php 
+        unset($_SESSION['registration-error']);
+        endif;
+        ?>
+        
         <button type="submit" class="register-btn">Register</button>
+    </form>
 </div>
+
 <?php
 include 'footer.php'
     ?>

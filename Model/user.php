@@ -1,4 +1,5 @@
 <?php
+
 class User
 {
     private $id;
@@ -12,6 +13,7 @@ class User
     private $phone;
     public function __construct($id, $name, $surname, $username, $password, $email, $birthday, $phone, $is_admin = false)
     {
+       
         $this->id = $id;
         $this->username = $username;
         $this->password = $password;
@@ -101,7 +103,7 @@ class User
         $result = $conn->query($query);
 
         if ($result->num_rows === 0) {
-            
+            $_SESSION["registration-error"] = 'Korisničko ime je zauzeto!';
             return true;
         }
         else { 
