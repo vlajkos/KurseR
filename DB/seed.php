@@ -64,10 +64,12 @@ function createUser($username, $password, $name, $surname, $email, $birthday, $p
 }
 
 // Default Admins
-createUser("jana", "andjela1234", "jana", "prezime", "jana@example.com", "1990-01-01", "1234567890", true);
+createUser("jana", "jana1234", "jana", "prezime", "jana@example.com", "1990-01-01", "1234567890", true);
 createUser("admin", "admin1234", "John", "Doe", "admin@example.com", "1995-05-05", "9876543210", true);
 
 include 'CourseSeeder.php';
+include 'InstructorSeeder.php';
+include 'CourseInstructorSeeder.php';
 
 
 

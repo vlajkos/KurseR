@@ -23,12 +23,16 @@
 body {
   min-height: 100vh;
   display: flex;
+  margin:0;
   flex-direction: column;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   position:relative;
   background-color: beige;
   font-family: 'Oswald', sans-serif;
+}
+.main-content {
+  flex:1;
 }
 /* Header */
 
@@ -280,5 +284,236 @@ body {
   font-size: 1.6rem;
 }
 
+/* Specific Course */
+.course-container {
+  padding: 8rem 12rem;
+  
+  font-family: 'Oswald', sans-serif;
+}
+.course-container h2 {
+  font-size:  2.4rem;
+  margin-bottom: 1.5rem;
+}
+.course-container p {
+  font-size: 1.6rem;
+}
 
+.course-date {
+  margin-top: 2rem;
+  font-size: 2.4rem;
+}
+.course-date date {
+  color: orangered;
+}
+.course-date p {
+  margin-bottom: 1rem;
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+.course-instructors-container a {
+  font-size:1.8rem;
+  margin-top: 1rem;
+  color:black;
+}
+.course-instructors-container a:hover {
+  font-size:2rem;
+  margin-top: 1rem;
+  color:red;
+}
+.course-instructors-container h2 {
+  margin-top: 2rem;
+}
+.course-instructors-container h3 {
+  font-size: 2.4rem;
+}
+.course-instructors-main {
+  display: flex;
+  justify-content: flex-start;
+}
+.course-instructors-sub  {
+  width: 14rem;
+  height: 18rem;
+  overflow: hidden;
+ 
+}
+.course-instrutors-sub img {
+  border-radius: 5px;
+}
+.course-instructors-sub:not(:last-child) {
+  margin-right: 2rem;
+}
+.course-instructors-container form {
+  margin: 2rem 0;
+  font-size: 2rem;
+}
+.course-instructors-container select {
+  margin-top: 1rem;
+}
+
+
+/* ALL COURSES AND INSTRUCTORS */
+.content-container {
+  position: relative;
+  margin:auto;
+  max-width: 70rem;
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 5rem;
+  margin-top: 4rem;
+}
+.content-container h2 {
+  font-size: 2.4rem;
+}
+.content-container-div {
+  position: relative;
+  margin-bottom: 3rem;
+}
+.courses-content {
+  margin-top: 2rem;
+  display: flex;
+}
+.courses-content p{
+  margin-left: 1rem;
+  font-size: 2rem;
+  
+}
+.courses-image-container {
+  border-radius: 1rem;
+  flex-shrink: 0;
+  width:12rem;
+}
+.courses-image-container img {
+  border-radius: 5px;
+}
+.courses-link {
+  display: inline-block;
+  width:100%;
+  height:100%;
+  position:absolute;
+  left: 0;
+  top:0;
+  z-index: 2;
+}
+
+
+/* Instructor */
+.instructor-container {
+  display:flex;
+}
+.instructor-container p {
+  margin-left: 2rem;
+}
+.instructor-header {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ADMIN PANEL ADDING FORM */
+.admin-add-instructor-container {
+  margin: auto;
+ font-size: 1.6rem;
+  max-width: 30rem;
+  
+}
+.admin-add-instructor-container input {
+  margin-bottom: 1rem;
+}
+.admin-add-instructor-container h2 {
+  margin-bottom: 1rem;
+}
+.admin-add-instructor {
+  display:flex;
+  flex-direction: column;
+}
+
+/* Profile Photo Adding */
+.default-profile-photo {
+  border-radius: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width:12rem;
+  height:12rem;
+}
+
+.image-preview-container {
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+#image-preview {
+  border-radius: 1rem;
+  width: 12rem;
+  height: 12rem;
+  overflow:hidden;
+  align-self:  flex-start;
+  background-size: cover;
+  background-position: center;
+}
+.hidden {
+  display: none;
+}
+
+/* GRAPH */
+.graph-container-main h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-top: 6rem;
+}
+
+.graph-container {
+  width:80%;
+  margin: auto;
+  display:flex;
+  padding: 5rem 0;
+  justify-content: space-around;
+ }
+ .graph {
+  position: relative;
+  width: 40%;
+  height: 20rem;
+  display:flex;
+ 
+  align-items: end;
+  gap: 10px;
+  border: 1px solid white;
+ }
+
+ .graph-item {
+  position: relative;
+  flex-grow: 1;
+  background-color: orange;
+  text-align: center;
+
+ }
+ .graph-item p {
+
+  position: absolute;
+  width: 100%;
+  bottom: -1.3rem;
+
+ }
+ .graph-percentage {
+  position: absolute;
+  transform: translateY(-50%);
+  left:-3rem;
+
+ }
+ .graph-percentage:nth-of-type(1) {
+  top:75%;
+
+ }
+ .graph-percentage:nth-of-type(2) {
+  top: 50%;
+  
+ }
+ .graph-percentage:nth-of-type(3) {
+  top: 25%;
+ }
+ .graph-percentage:nth-of-type(4) {
+  top: 0;
+ }
+ .graph-course-names p {
+  margin-bottom: 1rem;
+ }
 

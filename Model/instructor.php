@@ -2,14 +2,21 @@
 class Instructor {
     private $name;
     private $surname;
-    private $picture;
-    private $bio;
-    private $courses = [];
+    private $slug;
+    private $image;
+    private $biography;
+    private $email;
+  
 
-    public function __construct($name, $surname, $picture) {
+    public function __construct($name, $surname, $slug, $image, $biography, $email ) {
         $this->name = $name;
         $this->surname = $surname;
-        $this->picture = $picture;
+        $this->slug = $slug;
+        $this->image = $image;
+        $this->biography = $biography;
+        $this->email = $email;
+       
+
     }
 
     public function getName() {
@@ -20,29 +27,29 @@ class Instructor {
         return $this->surname;
     }
 
-    public function getBio() {
-        return $this->bio;
+    public function getBiography() {
+        return $this->biography;
     }
 
-    public function getPicture() {
-        return $this->picture;
+    public function getImage() {
+        return $this->image;
     }
 
-    public function addCourse(Course $course) {
-        $this->courses[] = $course;
+    public function getEmail() {
+        return $this->email;
+    }
+    public function getSlug() {
+        return $this->slug;
     }
 
-    public function getCourses() {
-        return $this->courses;
-    }
 
     // Setters
-    public function setBio($bio) {
-        $this->bio = $bio;
-    }
+    public function setBiography($biography){
+          $this->biography = $biography;
+        }
 
-    public function setPicture($picture) {
-        $this->picture = $picture;
+    public function setImage($image) {
+        $this->image = $image;
     }
 
     public function setName($name) {
@@ -52,4 +59,41 @@ class Instructor {
     public function setSurname($surname) {
         $this->surname = $surname;
     }
+
+    
 }
+
+class InstructorModel {
+    private static $conn;
+    
+        public function __construct($conn) {
+            self::$conn = $conn;
+        }
+    
+        public static  function getAllInstructors() {
+            $sql = "SELECT * FROM instructors";
+            $result = self::$conn->query($sql);
+    
+            // Check if there are results
+            if ($result->num_rows > 0) {
+                $instructors = [];
+                while ($row = $result->fetch_assoc()) {
+                    $instructors[] = new Instructor($row['name'], $row['surname'], $row['slug'], $row['image'], $row['biography'], $row['email']);
+                }
+                return $instructors;
+            } else {
+                return [];
+            }
+        }
+
+        public function createInstructor($name, $surname, $slug, $image, $biography, $email)
+        {
+            
+        
+            $sql = "INSERT INTO instructors (name, surname, slug, image, biography, email) 
+                    VALUES ('$name', '$surname', '$slug', '$image', '$biography', '$email')";
+        
+            return self::$conn->query($sql);
+        }
+        
+    } 

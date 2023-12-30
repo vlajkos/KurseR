@@ -38,15 +38,16 @@ include 'common.php'
         <p>Pridružite nam se danas i započnite svoje učenje na CourseR-u. Bez obzira na vaš nivo iskustva, nudimo resurse koji će vam pomoći da razvijete nove veštine i pridružite se zajednici koja deli vašu strast. Hvala vam što ste deo CourseR zajednice!</p>
         </div>
     </div>
+    <footer>
+<?php
+    include 'footer.php';
+ ?>
+</footer>
 </body>
 
 
 
 
 
-<footer>
-<?php
-    include 'footer.php';
- ?>
-</footer>
+
 </html>
