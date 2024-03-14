@@ -61,7 +61,7 @@ Ovaj kurs je savršen za svakoga ko želi da iskoristi pun potencijal TikToka i 
 Priključite se sada i krenite ka putu postizanja milionskih pregleda na TikToku! 🚀✨", 
 '2024-01-12',
 'tiktok-course.jpg',
-1000);
+100);
 
 $osnoveKuvanjaKurs = createCourse(
     "Ovladajte Osnovama Kulinarstva",
@@ -84,7 +84,7 @@ $osnoveKuvanjaKurs = createCourse(
     Bez obzira da li kuvate za sebe, porodicu ili prijatelje, ovaj kurs će vam omogućiti da steknete veštine i znanje za stvaranje ukusnih i zadovoljavajućih obroka. Pridružite nam se sada i započnite svoje kulinarsko putovanje! 🍳🌿",
     '2024-02-01',
     'cooking-course.jpg',
-    800
+    54
 );
 
 $naprednaFotografijaKurs = createCourse(
@@ -108,7 +108,7 @@ $naprednaFotografijaKurs = createCourse(
     Bez obzira da li vas zanima profesionalna fotografija ili jednostavno želite da izrazite svoju kreativnost putem vizuala, ovaj kurs je vaša kapija ka naprednoj fotografiji. Pridružite nam se sada i oslobodite pun potencijal svoje kamere! 📷✨",
     '2024-03-15',
     'photography-course.jpg',
-    200
+    31
 );
 
 
@@ -133,7 +133,7 @@ $pevanjeZaPocetnikeKurs = createCourse(
     Ovaj kurs je savršen za sve koji žele da otkriju radost pevanja i unaprede svoje veštine. Bez obzira da li pevate uživo ili želite poboljšati svoje pevačke sposobnosti, pridružite nam se sada i istražite svoj pevački potencijal! 🎤🎶",
     '2024-04-01',
     'singing-course.PNG',
-    150
+    22
 );
 $sminkanjeKurs = createCourse(
     "Umetnost Šminkanja: Osnove i Saveti",
@@ -156,7 +156,7 @@ $sminkanjeKurs = createCourse(
     Bez obzira da li želite svakodnevni dnevni izgled, večernji glamur ili se pripremate za poseban događaj, ovaj kurs će vam pomoći da postignete željeni izgled. Pridružite nam se sada i istražite umetnost šminkanja! 💄✨",
     '2024-05-01',
     'makeup-course.jpg',
-    180
+    12
 );
 
 

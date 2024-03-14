@@ -68,6 +68,7 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && $_POST["username"]
             <input class="login-input-field" type="password" placeholder="Unesite vašu lozinku" name="password" id="password">
         </div>
         <button type="submit" class="btn">Login</button>
+    </form>
 </div>
 <?php
 include 'footer.php'

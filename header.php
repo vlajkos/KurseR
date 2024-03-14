@@ -10,7 +10,6 @@
                 <ul>
                     <li><a href="courses.php">Kursevi</a></li>
                     <li><a href="instructors.php">Predavači</a></li>
-                    <li><a href="sale.php">Akcije</a></li>
                     <li><a href="about.php">O nama</a></li>
                     <?php
                     if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] == 1):

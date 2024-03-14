@@ -67,7 +67,7 @@ if (isset($_POST["name"]) && isset($_POST["username"]) && isset($_POST["password
 </body>
 <div class="register-container">
     <form action="#" class="register-form" method="POST">
-        <h2>Registruj se i izaberi željeni kurs uz dodatnih 10% popusta!</h2>
+        <h2>Registruj se i postani član KurseR porodice!</h2>
 
         <div id="name_error"></div>
         <div class="register-input-container">        
@@ -125,9 +125,8 @@ if (isset($_POST["name"]) && isset($_POST["username"]) && isset($_POST["password
 include 'footer.php'
     ?>
 </div>
+
 <script>
-
-
     let register_form = document.querySelector('.register-form');
     register_form.addEventListener("submit", (event) => {
         event.preventDefault();
@@ -183,6 +182,7 @@ include 'footer.php'
 
     }
 </script>
+
 </body>
 
 </html>

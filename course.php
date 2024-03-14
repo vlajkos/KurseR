@@ -3,6 +3,7 @@ session_start();
 require_once "handler/dbBroker.php";
 require_once "handler/CourseController.php";
 require_once 'Model/Course.php';
+require_once 'Model/Application.php';
 $conn = Database::connectDatabase();
 include 'common.php';
 
@@ -36,6 +37,11 @@ include 'common.php';
   
           $courseModel->addInstructors($course->getId(), $_POST['instructor']);
         }
+
+    if (isset($_POST['add-application']))  {
+        $applicationModel = new ApplicationModel($conn);
+        $applicationModel->createApplication($course->getId(), $_SESSION['id']);
+    }
    ?>
 
     
@@ -108,6 +114,41 @@ include 'common.php';
                 $dateTime = new DateTime($date);
                 echo $dateTime->format("d.m.Y.") ?> </date>
              </div>
+
+             <?php 
+ if(isset($_SESSION['id'])) {
+
+              $applicationModel = new ApplicationModel($conn);
+              $applications = $applicationModel->getAllApplications();
+              $check = 0;
+              foreach($applications as $application) {
+                
+              if($application->getRelatedUser()->getId() ==  $_SESSION['id'] && $application->getRelatedCourse()->getId() == $course->getId() )
+                
+                $check = 1;
+              }
+              if($check == 0){
+              
+              ?>
+              
+             <form action="" method="POST" class="course-application-container">
+             <input type="submit" name="add-application" class="course-application" value="Prijavi se">
+             </form>
+             <?php }
+             else {
+             ?>
+             <h2 style="margin-top:2rem; color:orangered">Već ste prijavljeni za ovaj kurs!</h2>
+             <?php
+             }}
+             else {
+              ?>
+              <form action="login.php">
+              <input type="submit" name="" class="course-application" value="Prijavi se">
+              </form>
+              <?php
+             }
+             ?>
+             
             
     </div>
     
@@ -119,6 +160,7 @@ include 'common.php';
         <h2>Nepostojeći kurs!</h2>
      </div>
     <?php endif;
+    
     ?>
 </div>
 <footer>

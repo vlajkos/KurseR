@@ -6,7 +6,10 @@ require_once "handler/dbBroker.php";
 require_once 'Model/Course.php';
 require_once 'Handler/InstructorController.php';
 require_once 'Handler/CourseController.php';
+
+if(isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1){
 $conn = Database::connectDatabase();
+
 ?>
 <?php
 
@@ -36,6 +39,10 @@ if (isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['slug']) &
 <?php
     include 'header.php';
 ?>
+
+<div class="admin-application-container">
+    <a href="applications.php"><h2>Prijave za kurseve</h2></a>
+</div>
  
 <div class="admin-add-instructor-container">
 
@@ -153,7 +160,8 @@ if (isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['slug']) &
  ?>
 
 </body>
-
+<?php } else echo 'NEDOZVOLJEN PRISTUP' 
+ ?>
 
 
 

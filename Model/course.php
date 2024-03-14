@@ -149,9 +149,9 @@ class CourseModel {
                 $stmtInsert->execute();
                 $stmtInsert->close();
         
-                echo "Instructor added to the course successfully.\n";
+                
             } else {
-                echo "Instructor with the specified slug not found.\n";
+                
             }
         
             $stmt->close();
